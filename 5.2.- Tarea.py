@@ -36,18 +36,22 @@ else:
 
 ###Inicio Codigo###
 
-
 #Tarea parte 2
 
 #se inician las variables auxialires, se tranforma a floar para permitir/conservar los datos decimales
-Peso = float(input("Ingrese su peso en kilogramos: "))
-Altura = float(input("Ingrese su estatura en metros: "))
+Peso = float(input("Ingrese su peso en Kilogramos: "))
+Altura = float(input("Ingrese su estatura en Metros: "))
 
-#se hace la ecuacion del IMC, se utiliza la funcion POW para hacer la potencia cuadrada de estatura, ademas del round para redondear los decimales.
-IMC = (Peso / pow(Altura,2))
-IMC = round(IMC, 2)
-#se escribe el mensaje deseado ademas se transforma a string para poder concatenar el resultado.
-print("Tu índice de masa corporal es " + str(IMC))
-
-
+#se valida que los datos sean positivos
+if(Peso <= 0):
+  print("Ingrese un peso adecuado")
+elif(Altura <= 0):
+  print("Ingrese una altura adecuada")
+else:
+  #se hace la ecuacion del IMC, se utiliza la funcion POW para hacer la potencia cuadrada de estatura, ademas del round para redondear los decimales.
+  IMC = (Peso / pow(Altura,2))
+  IMC = round(IMC, 2)
+  #se escribe el mensaje deseado ademas se transforma a string para poder concatenar el resultado.
+  print("Tu índice de masa corporal es " + str(IMC))
+  
 ###Fin Codigo###
